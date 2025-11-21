@@ -16,28 +16,21 @@ import JumpButton from "../components/JumpButton.astro";
 </GameLayout>
 
 <style is:global>
-  .jump-button:has(:focus-within) {
-    ~ .character-box,
-    ~ .playground {
-      --jumped: true;
+  .jump-button:has(:active, :focus-within) ~ .character-box {
+    --jumped: true;
+  }
+
+  .start-game:has(input:not(:checked)) {
+    & ~ :not(.background) {
+      visibility: hidden;
     }
-  }
 
-  .playground {
-    container-name: playground;
-  }
-
-  .start-game:has(input:not(:checked)) ~ *:not(.background) {
-    visibility: hidden;
-    pointer-events: none;
-  }
-
-  .start-game:has(input:not(:checked)) ~ .background {
-    filter: brightness(0.25) blur(10px);
+    & ~ .background {
+      filter: brightness(0.25) blur(10px);
+    }
   }
 
   .start-game:has(:checked) ~ .background {
     --game-started: true;
-    transition: filter 0.5s;
   }
 </style>

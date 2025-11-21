@@ -1,15 +1,15 @@
 ---
 
 ---
+
 <div class="start-game">
   <label for="start" style="user-select: none">
     <div>Forest</div>
     <div>Jump</div>
   </label>
   <input id="start" type="checkbox" />
-
   <div class="_decor">
-    <img src="/assets/forest-bg.png" alt="">
+    <img src="/assets/forest-bg.png" alt="" />
   </div>
 </div>
 
@@ -25,21 +25,23 @@
     }
 
     input {
-      all: unset;
-      opacity: 0;
-      width: 0;
-      height: 0;
-      overflow: hidden;
+      position: fixed;
+      left: -99999px;
     }
 
     label {
       display: inline-block;
       padding: 1rem;
+      transform: scaleY(1.5);
       font-size: 10vmax;
       line-height: 1;
-      cursor: pointer;
       text-align: center;
-      transform: scaleY(1.5);
+      cursor: pointer;
+      transition: scale 0.25s;
+
+      &:hover {
+        scale: 1.03;
+      }
 
       :nth-child(2) {
         translate: -6vmax -5vmax;

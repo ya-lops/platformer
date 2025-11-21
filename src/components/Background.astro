@@ -13,32 +13,21 @@
 <style is:global>
   .background {
     container-name: bg-container;
-    z-index: -1;
     position: absolute;
     inset: 0;
+    z-index: -1;
+    transition: filter 0.5s;
 
     ._background-inner {
       display: flex;
       align-items: center;
       height: 100%;
-      --pos: calc(100vh - 1080px - 360px);
-      translate: 0 max(-50px, var(--pos));
+      --_pos: calc(100vh - 1080px - 360px);
+      translate: 0 max(-25px, var(--_pos));
 
-      img {
-        flex-shrink: 0;
+      @container bg-container style(--game-started) {
+        animation: moveBg var(--background-time, 15s) infinite linear;
       }
-    }
-  }
-
-  @container bg-container style(--game-started) {
-    ._background-inner {
-      animation: moveBg var(--background-time, 15s) infinite linear;
-    }
-  }
-
-  @keyframes moveBg {
-    to {
-      transform: translatex(-1920px);
     }
   }
 </style>
