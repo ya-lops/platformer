@@ -1,0 +1,35 @@
+---
+
+---
+
+<div class="jump-button">
+  <label for="jump" style="user-select: none">Прыжок</label>
+  <input id="jump" type="checkbox" />
+</div>
+
+<style is:global>
+  .jump-button {
+    grid-area: b-center;
+    color: #fff;
+    align-self: start;
+    justify-self: center;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    text-align: center;
+
+    input {
+      all: unset;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    label {
+      padding: 1rem;
+      font-size: 2rem;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+</style>

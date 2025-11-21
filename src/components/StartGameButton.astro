@@ -1,0 +1,35 @@
+---
+
+---
+<div class="start-game">
+  <label for="start" style="user-select: none">Нажать для Начала</label>
+  <input id="start" type="checkbox" />
+</div>
+
+<style>
+  .start-game {
+    grid-area: start;
+    align-self: center;
+    justify-self: center;
+    color: #fff;
+
+    &:has(:checked) {
+      display: none;
+    }
+
+    input {
+      all: unset;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    label {
+      padding: 1rem;
+      font-size: 2rem;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+</style>

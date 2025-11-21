@@ -1,16 +1,43 @@
 ---
-
+import GameLayout from "../layouts/GameLayout.astro";
+import StartGameButton from "../components/StartGameButton.astro";
+import RestartGameButton from "../components/RestartGameButton.astro";
+import Background from "../components/Background.astro";
+import Character from "../components/Character.astro";
+import JumpButton from "../components/JumpButton.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<GameLayout>
+  <StartGameButton />
+  <Background />
+  <RestartGameButton />
+  <JumpButton />
+  <Character />
+</GameLayout>
+
+<style is:global>
+  .jump-button:has(:focus-within) {
+    ~ .character-box,
+    ~ .playground {
+      --jumped: true;
+    }
+  }
+
+  .playground {
+    container-name: playground;
+  }
+
+  .start-game:has(input:not(:checked)) ~ *:not(.background) {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .start-game:has(input:not(:checked)) ~ .background {
+    filter: brightness(0.25) blur(10px);
+  }
+
+  .start-game:has(:checked) ~ .background {
+    --game-started: true;
+    transition: filter 0.5s;
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+
+---
+
+<div class="character-box">
+  <div class="_character"></div>
+</div>
+
+<style is:global>
+  .character-box {
+    --jumped: false;
+    
+    container-name: character-box;
+    grid-area: score;
+    align-self: end;
+    justify-self: center;
+
+    animation: rolling 1s infinite linear;
+    /* border: 2px solid red; */
+  }
+
+  ._character {
+    background-image: url("/assets/hero.png");
+    background-size: 100px 70px;
+    width: 100px;
+    height: 70px;
+    /* border: 2px solid green; */
+  }
+
+  @container character-box style(--jumped: true) {
+    ._character {
+      animation-name: jump;
+      animation-duration: 1.5s;
+      animation-iteration-count: once;
+      animation-timing-function: linear;
+      counter-increment: clicked;
+    }
+  }
+</style>
