@@ -16,7 +16,7 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    transition: filter 0.5s;
+    transition: filter 0.5s, scale .33s;
 
     ._background-inner {
       display: flex;
@@ -25,7 +25,7 @@
       --_pos: calc(100vh - 1080px - 360px);
       translate: 0 max(-25px, var(--_pos));
 
-      @container bg-container style(--game-started) {
+      @container style(--game-started) {
         animation: moveBg var(--background-time, 15s) infinite linear;
       }
     }

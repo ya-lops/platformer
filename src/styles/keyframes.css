@@ -45,3 +45,12 @@
     transform: translatex(-1920px);
   }
 }
+
+@keyframes score-count {
+  0% {
+    --score: 0000;
+  }
+  100% {
+    --score: 9999;
+  }
+}

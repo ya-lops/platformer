@@ -3,14 +3,29 @@
 ---
 
 <div class="restart-game">
-  <a href="/">
-  Restart</a>
+  <a href="/"> restart</a>
 </div>
 
 <style>
   .restart-game {
     position: absolute;
-    right: min(32px, 3vh);
-    top: min(32px, 3vh);
+    align-self: start;
+    justify-self: end;
+    margin: min(32px, 3vh);
+    font-family: 'Pixelify Sans';
+    color: #fff;
+    font-size: clamp(16px, 10vmax, 32px);
+    text-shadow: 3px 3px 5px black;
+
+    a {
+      display: inline-block;
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        scale: 1.1;
+        color: yellow;
+      }
+    }
   }
 </style>

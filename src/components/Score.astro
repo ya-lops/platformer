@@ -1,0 +1,64 @@
+---
+
+---
+
+<div class="score">
+  <div class="_score-inner">score:&nbsp;</div>
+</div>
+
+<style is:global>
+  .score {
+    --score: 0;
+    container-name: score;
+    grid-area: score;
+    align-self: start;
+    justify-self: start;
+    margin: min(32px, 3vh);
+
+    ._score-inner {
+      font-family: 'Pixelify Sans';
+      color: #fff;
+      font-size: clamp(16px, 10vmax, 32px);
+      text-shadow: 3px 3px 5px black;
+      counter-reset: score var(--score);
+
+      &::after {
+        content: counter(score);
+      }
+
+       @container style(var(--score) > -1) {
+        &:after {
+          content: "000" counter(score);
+        }
+      }
+
+      @container style(var(--score) > 9) {
+        &:after {
+          content: "00" counter(score);
+        }
+      }
+
+      @container style(var(--score) > 99) {
+        &:after {
+          content: "0" counter(score);
+        }
+      }
+
+      @container style(var(--score) > 999) {
+        &:after {
+          content: counter(score);
+        }
+      }
+
+      @container style(--game-started) {
+        animation: score-count 9999s linear;
+      }
+    }
+  }
+
+  @property --score {
+    syntax: "<integer>";
+    initial-value: 0000;
+    inherits: false;
+  }
+</style>

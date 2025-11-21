@@ -1,6 +1,7 @@
 ---
 import GameLayout from "../layouts/GameLayout.astro";
 import StartGameButton from "../components/StartGameButton.astro";
+import Score from "../components/Score.astro";
 import RestartGameButton from "../components/RestartGameButton.astro";
 import Background from "../components/Background.astro";
 import Character from "../components/Character.astro";
@@ -10,6 +11,7 @@ import JumpButton from "../components/JumpButton.astro";
 <GameLayout>
   <StartGameButton />
   <Background />
+  <Score/>
   <RestartGameButton />
   <JumpButton />
   <Character />
@@ -27,9 +29,11 @@ import JumpButton from "../components/JumpButton.astro";
 
     & ~ .background {
       filter: brightness(0.25) blur(10px);
+      scale: 1.1;
     }
   }
 
+  .start-game:has(:checked) ~ .score,
   .start-game:has(:checked) ~ .background {
     --game-started: true;
   }

@@ -10,12 +10,19 @@
 <style is:global>
   .jump-button {
     grid-area: b-center;
+    font-family: 'Pixelify Sans';
+    font-size: clamp(16px, 10vmax, 64px);
+    font-weight: 500;
     color: #fff;
-    align-self: start;
+    align-self: center;
     justify-self: center;
-    border: 1px solid #fff;
-    border-radius: 30px;
     text-align: center;
+    text-transform: uppercase;
+    
+    &:hover {
+      scale: 1.1;
+      color: yellow;
+    }
 
     input {
       all: unset;
@@ -27,7 +34,7 @@
 
     label {
       padding: 1rem;
-      font-size: 2rem;
+      font-size: inherit;
       cursor: pointer;
       text-align: center;
     }
