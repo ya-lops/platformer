@@ -10,6 +10,7 @@
   .character-box {
     --jumped: false;
     container-name: character-box;
+    z-index: 10;
     grid-area: score;
     align-self: end;
     justify-self: center;
@@ -25,7 +26,7 @@
 
     @container style(--jumped: true) {
       animation-name: jump;
-      animation-duration: 1.5s;
+      animation-duration: 2s;
       animation-iteration-count: once;
       animation-timing-function: linear;
     }

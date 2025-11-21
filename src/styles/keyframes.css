@@ -1,26 +1,26 @@
 @keyframes jump {
   from,
   20%,
-  53%,
+  60%,
   80%,
   to {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transform: translate3d(0, 0, 0);
+    transform:  translatex(0px) translatey(0px);
   }
 
   40%,
-  43% {
+  50% {
     animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    transform: translate3d(0, -85px, 0);
+    transform: translatex(50px) translatey(-250px);
   }
 
   70% {
     animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    transform: translate3d(0, -25px, 0);
+    transform: translatey(-25px);
   }
 
   90% {
-    transform: translate3d(0, -4px, 0);
+    transform: translatex(20px) translatey(-5px);
   }
 }
 
@@ -43,6 +43,12 @@
 @keyframes moveBg {
   to {
     transform: translatex(-1920px);
+  }
+}
+
+@keyframes moveObstacle {
+  to {
+    transform: translatex(-110vw);
   }
 }
 

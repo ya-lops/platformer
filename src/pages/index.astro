@@ -6,6 +6,7 @@ import RestartGameButton from "../components/RestartGameButton.astro";
 import Background from "../components/Background.astro";
 import Character from "../components/Character.astro";
 import JumpButton from "../components/JumpButton.astro";
+import Obstacle from "../components/Obstacle.astro";
 ---
 
 <GameLayout>
@@ -15,6 +16,7 @@ import JumpButton from "../components/JumpButton.astro";
   <RestartGameButton />
   <JumpButton />
   <Character />
+  <Obstacle/>
 </GameLayout>
 
 <style is:global>
@@ -33,8 +35,7 @@ import JumpButton from "../components/JumpButton.astro";
     }
   }
 
-  .start-game:has(:checked) ~ .score,
-  .start-game:has(:checked) ~ .background {
+  .start-game:has(:checked) ~ :where(.score, .background, .obstacle-box) {
     --game-started: true;
   }
 </style>

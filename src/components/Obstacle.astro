@@ -1,0 +1,37 @@
+---
+
+---
+
+<div class="obstacle-box">
+  <div class="_obstacle"></div>
+</div>
+
+<style is:global>
+  .obstacle-box {
+    container-name: obstacle-box;
+    grid-area: reset;
+    align-self: end;
+    justify-self: end;
+    /* border: 1px solid red; */
+    translate: 200px;
+
+    ._obstacle {
+      width: 120px;
+      height: 70px;
+      background-image: url("/assets/obstacle_01.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      /* border: 1px solid blue; */
+
+      @container style(--game-started) {
+        animation: moveBg var(--move-timing, 15s) infinite linear, 15s bordered .1s infinite;
+      }
+    }
+  }
+
+  /* @keyframes bordered {
+    to {
+      border: 3px solid red;
+    }
+  } */
+</style>
