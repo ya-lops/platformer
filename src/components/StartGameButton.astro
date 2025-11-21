@@ -2,8 +2,15 @@
 
 ---
 <div class="start-game">
-  <label for="start" style="user-select: none">Нажать для Начала</label>
+  <label for="start" style="user-select: none">
+    <div>Forrest</div>
+    <div>Jump</div>
+  </label>
   <input id="start" type="checkbox" />
+
+  <div class="_decor">
+    <img src="/assets/forest-bg.png" alt="">
+  </div>
 </div>
 
 <style>
@@ -26,10 +33,24 @@
     }
 
     label {
+      display: inline-block;
       padding: 1rem;
-      font-size: 2rem;
+      font-size: 10vmax;
+      line-height: 1;
       cursor: pointer;
       text-align: center;
+      transform: scaleY(1.5);
+
+      :nth-child(2) {
+        translate: -6vmax -5vmax;
+      }
+    }
+
+    ._decor {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-width: 30vw;
     }
   }
 </style>
